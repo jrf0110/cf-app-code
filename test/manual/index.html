@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <script src="/dist/cf-app-code.bundle.js"></script>
+  </head>
+  <body>
+    <h1>Unsanitized javascript code block</h1>
+    <code>
+      var foo = 'bar'
+      if (foo <= 'bar') {
+        console.log('baz', foo)
+      }
+    </code>
+    <pre><code>
+      var foo = 'bar'
+      if (foo <= 'bar') {
+        console.log('baz', foo)
+      }
+    </code></pre>
+  </body>
+</html>

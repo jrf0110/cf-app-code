@@ -1,0 +1,41 @@
+{
+  "name": "cf-app-code",
+  "version": "1.0.0",
+  "description": "Automatically adds syntax highlighting to your code blocks",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build:typescript && npm run build:bundle",
+    "serve": "http-server -p 8000",
+    "start": "npm run watch",
+    "watch": "npm run watch:pre && npm run build:watch & npm run serve",
+    "watch:pre": "mkdirp dist && node -e \"require('touch').sync('./dist/cf-app-code.js')\"",
+    "build:typescript": "tsc -p tsconfig.json",
+    "build:bundle": "rollup --config rollup.config.js",
+    "build:watch": "npm run build:typescript:watch & npm run build:bundle:watch",
+    "build:typescript:watch": "npm run build:typescript -- -w",
+    "build:bundle:watch": "npm run build:bundle -- -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrf0110/cf-app-code.git"
+  },
+  "author": "John Fawcett",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jrf0110/cf-app-code/issues"
+  },
+  "homepage": "https://github.com/jrf0110/cf-app-code#readme",
+  "devDependencies": {
+    "@types/highlight.js": "^9.1.9",
+    "highlight.js": "^9.10.0",
+    "http-server": "^0.9.0",
+    "rollup": "^0.41.6",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "rollup-watch": "^3.2.2",
+    "touch": "^1.0.0",
+    "typescript": "^2.2.2"
+  }
+}
