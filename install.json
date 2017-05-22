@@ -1,0 +1,139 @@
+{
+  "resources": {
+    "head": [
+      {
+        "type": "script",
+        "src": "./dist/cf-app-code.bundle.js"
+      }
+    ]
+  },
+  "preview": {
+    "handlers": [
+      {
+        "options": ["*"],
+        "execute": "INSTALL_SCOPE.setOptions(INSTALL_OPTIONS)"
+      }
+    ]
+  },
+  "options": {
+    "properties": {
+      "theme": {
+        "order": 0,
+        "default": "github",
+        "title": "Theme",
+        "description": "This indicates how many objects you should have at any given time",
+        "type": "string",
+        "enum": [
+          "agate",
+          "github",
+          "androidstudio",
+          "googlecode",
+          "arduino-light",
+          "grayscale",
+          "arta",
+          "gruvbox-dark",
+          "ascetic",
+          "gruvbox-light",
+          "atelier-cave-dark",
+          "hopscotch",
+          "atelier-cave-light",
+          "hybrid",
+          "atelier-dune-dark",
+          "idea",
+          "atelier-dune-light",
+          "ir-black",
+          "atelier-estuary-dark",
+          "kimbie.dark",
+          "atelier-estuary-light",
+          "kimbie.light",
+          "atelier-forest-dark",
+          "magula",
+          "atelier-forest-light",
+          "mono-blue",
+          "atelier-heath-dark",
+          "monokai-sublime",
+          "atelier-heath-light",
+          "monokai",
+          "atelier-lakeside-dark",
+          "obsidian",
+          "atelier-lakeside-light",
+          "ocean",
+          "atelier-plateau-dark",
+          "paraiso-dark",
+          "atelier-plateau-light",
+          "paraiso-light",
+          "atelier-savanna-dark",
+          "pojoaque",
+          "atelier-savanna-light",
+          "pojoaque.jpg",
+          "atelier-seaside-dark",
+          "purebasic",
+          "atelier-seaside-light",
+          "qtcreator_dark",
+          "atelier-sulphurpool-dark",
+          "qtcreator_light",
+          "atelier-sulphurpool-light",
+          "railscasts",
+          "atom-one-dark",
+          "rainbow",
+          "atom-one-light",
+          "school-book",
+          "brown-paper",
+          "school-book.png",
+          "brown-papersq.png",
+          "solarized-dark",
+          "codepen-embed",
+          "solarized-light",
+          "color-brewer",
+          "sunburst",
+          "darcula",
+          "tomorrow-night-blue",
+          "dark",
+          "tomorrow-night-bright",
+          "darkula",
+          "tomorrow-night-eighties",
+          "default",
+          "tomorrow-night",
+          "docco",
+          "tomorrow",
+          "dracula",
+          "vs",
+          "far",
+          "xcode",
+          "foundation",
+          "xt256",
+          "github-gist",
+          "zenburn"
+        ]
+      },
+      "showAdvanced": {
+        "order": 1,
+        "type": "boolean",
+        "title": "Show advanced options",
+        "default": false
+      },
+      "advanced": {
+        "showIf": {
+          "showAdvanced": true
+        },
+        "order": 2,
+        "type": "object",
+        "title": "Advanced options",
+        "properties": {
+          "wrapCodesWithoutPres": {
+            "type": "boolean",
+            "title": "Wrap code tags with a pre tag",
+            "description": "Wrap code tags with a pre tag so highlighting will occur on all code tags",
+            "default": true
+          },
+          "normalizeIndentation": {
+            "type": "boolean",
+            "title": "Normalize Indentation",
+            "description": "Ignore the indentation added from HTML",
+            "default": true
+          }
+        }
+      }
+    }
+  }
+}
